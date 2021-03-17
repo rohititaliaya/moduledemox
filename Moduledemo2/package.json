@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@burhanahmeed/vue-modal-2": "^1.1.9",
         "vue-axios": "^3.2.4",
         "vuetify": "^2.4.6"
     }

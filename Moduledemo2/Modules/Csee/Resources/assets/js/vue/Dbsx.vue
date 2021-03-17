@@ -1,5 +1,60 @@
 <template>
     <div class="container">
+        <vue-modal-2 name="modal-1" @on-close="close">
+            <form action="./api/store" method="POST" @submit.prevent="regCustomer()">
+            <table>
+                <tr>
+                    <td><label> First Name:</label></td>
+                    <td><input type="text" id="fnm" name="fnm" v-model="fnm" placeholder="Enter first name" required></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td><label>Last Name:</label></td>
+                    <td><input type="text" id="lnm" name="lnm" v-model="lnm" placeholder="Enter Last name" required></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td><label>Email:</label></td>
+                    <td><input type="email" id="email" name="email" v-model="email" placeholder="Enter Email" required></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td><label>Mobile No:</label></td>
+                    <td><input type="number" name="mo" v-model="phone" placeholder="Enter Mobile No" required></td>
+                </tr>
+                <tr>
+                  <td><br></td>
+                </tr>
+                <tr>
+                  <td><label>Password:</label></td>
+                  <td><input type="password" name="pwd" v-model="pass" placeholder="Enter password" required></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                  <td><label>Retype-Password:</label></td>
+                  <td><input type="password" name="rpwd"  v-model="rpass" placeholder="Enter Again" required></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <center>
+                      <input type="Submit" value="Submit" class="btn btn-primary btn-sm">
+                    </center>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </vue-modal-2>
         <div style="margin-bottom: 20px;">
             <h2>DashBoard</h2>
         </div>
@@ -10,9 +65,9 @@
                 <div class="select">
                     Select Rows:
                     <select v-model="length" @change="resetPagination()">
+                        <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="20">20</option>
-                        <option value="30">30</option>
                     </select>
                 </div>
             </div>
@@ -41,7 +96,7 @@
                         <a class="btn btn-danger btn-sm"  @click="deleteUser(user.id)">Remove</a>
                     </td> 
                     <td>   
-                        <a class="btn btn-primary btn-sm"  @click="editUser(user.id)">Edit</a>
+                        <a class="btn btn-primary btn-sm"  @click="open(user.id)">Edit</a>
                     </td>
                 </tr>
             </tbody>
@@ -82,6 +137,7 @@
             </nav>
         </div>
     </div>
+    
 </template>
 
 <script>
@@ -173,6 +229,12 @@ export default {
         getIndex(array, key, value) {
             return array.findIndex(i => i[key] == value)
         },
+        open (id) {
+            this.$vm2.open('modal-1')
+        },
+        close () {
+            this.$vm2.close('modal-1')
+         }
     },
     computed: {
         filteredUsers() {

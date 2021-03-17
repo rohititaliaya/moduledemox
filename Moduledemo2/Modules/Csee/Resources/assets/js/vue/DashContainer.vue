@@ -53,7 +53,7 @@
                 <tr>
                     <td colspan="2">
                     <center>
-                      <input type="Submit" value="Submit">
+                      <input type="Submit" value="Submit" class="btn btn-primary btn-sm">
                     </center>
                     </td>
                 </tr>
