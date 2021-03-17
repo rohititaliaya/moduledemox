@@ -1,0 +1,13 @@
+{
+    "name": "Csee",
+    "alias": "csee",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Csee\\Providers\\CseeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
