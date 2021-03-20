@@ -13,7 +13,11 @@ Vue.use(Modal);
 
 Vue.component('home', require('./vue/Home.vue').default);
 
-
 const app= new Vue({
     el : '#home',
 });
+
+const routes = {
+    '/': Home,
+    '/about': About
+  }

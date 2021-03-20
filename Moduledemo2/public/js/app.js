@@ -15076,7 +15076,14 @@ __webpack_require__.r(__webpack_exports__);
         prevPage: '',
         from: '',
         to: ''
-      }
+      },
+      fnm: '',
+      lnm: '',
+      email: '',
+      phone: '',
+      pass: '',
+      rpass: '',
+      message: ''
     };
   },
   methods: {

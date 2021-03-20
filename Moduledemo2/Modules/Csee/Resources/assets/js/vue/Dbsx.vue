@@ -181,6 +181,13 @@ export default {
                 from: '',
                 to: ''
             },
+            fnm:'',
+            lnm:'',
+            email:'',
+            phone:'',
+            pass:'',
+            rpass:'',
+            message:'',
         }
     },
     methods: {
